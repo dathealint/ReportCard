@@ -33,6 +33,12 @@ public class ReportCard {
 	 */
 	private LinkedHashMap<String, ArrayList<Double>> allGrades;
 
+	public ReportCard() {
+		// Disable default constructor, as we need studentId when initialize ReportCard object.
+		// studentId will never change, so cannot have a setter method
+		throw new RuntimeException("studentId is required! Use constructor ReportCard(int studentId) instead!");
+	}
+
 	public ReportCard(int sId) {
 		this.studentId = sId;
 		this.allGrades = new LinkedHashMap<>();
